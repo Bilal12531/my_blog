@@ -155,7 +155,16 @@ def show_post(post_id):
 
 
 # TODO: Use a decorator so only an admin user can create a new post
+def decorators(f):
+    @wraps(f)
+    def decorator_fun(*args, **kwargs):
+        if current_user != 1:
+            return abort(200)
+        return f(*args, **kwargs)
+    return decorator_fun    
+
 @app.route("/new-post", methods=["GET", "POST"])
+@decorators
 @login_required
 def add_new_post():
     form = CreatePostForm()
@@ -220,4 +229,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5002)
+    app.run(debug=False)
