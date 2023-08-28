@@ -8,9 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
-import os
 # Import your forms from the forms.py
 from forms import CreatePostForm, reg_form,login_form,comments
+import os
 
 
 app = Flask(__name__)
@@ -31,7 +31,7 @@ gravatar = Gravatar(app, size=50,
 
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DB_URI','sqlite:///posts3.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", 'sqlite:///posts3.db')
 db = SQLAlchemy()
 db.init_app(app)
 
@@ -155,16 +155,7 @@ def show_post(post_id):
 
 
 # TODO: Use a decorator so only an admin user can create a new post
-def decorators(f):
-    @wraps(f)
-    def decorator_fun(*args, **kwargs):
-        if current_user != 1:
-            return abort(200)
-        return f(*args, **kwargs)
-    return decorator_fun    
-
 @app.route("/new-post", methods=["GET", "POST"])
-@decorators
 @login_required
 def add_new_post():
     form = CreatePostForm()
@@ -229,4 +220,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True, port=5002)
