@@ -47,28 +47,25 @@ class BlogPost(db.Model):
     date = db.Column(db.String(250), nullable=False)
     body = db.Column(db.Text, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
-    comm = relationship('Comment', back_populates='blog_post')
+    comm = relationship('comment', back_populates='blog')
 
-
-
-# TODO: Create a User table for all your registered users. 
 class User(db.Model, UserMixin):
-     __tablename__ = "users"
-     id = db.Column(db.Integer, primary_key=True)
-     name = db.Column(db.String(250), nullable=False)
-     email =  db.Column(db.String(250), unique=True, nullable=False)
-     password = db.Column(db.String(250), nullable=False)
-     post = relationship('BlogPost', back_populates='author')
-     comm = relationship('comment', back_populates='comment_auth')
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), nullable=False)
+    email = db.Column(db.String(250), unique=True, nullable=False)
+    password = db.Column(db.String(250), nullable=False)
+    blog_posts = relationship('BlogPost', back_populates='author')
+    comment_auth = relationship('comment', back_populates='comment_auth')
 
 class comment(db.Model):
     __tablename__ = "comments"
     id = db.Column(db.Integer, primary_key=True)    
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    comment_auth = relationship('User', back_populates='comm')
+    comment_auth = relationship('User', back_populates='comment_auth')
     blog_id = db.Column(db.Integer, db.ForeignKey('blog_posts.id'))
     blog = relationship('BlogPost', back_populates='comm')
-    text = db.Column(db.Text, nullable = False)
+    text = db.Column(db.Text, nullable=False)
 
 
 with app.app_context():
