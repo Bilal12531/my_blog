@@ -93,7 +93,7 @@ def register():
         if user:
             flash('login instead Register')
             return redirect(url_for('login'))   
-        sec_pass = generate_password_hash(password, method="PBKDF2", salt_length=8)
+        sec_pass = generate_password_hash(password, method="sha256", salt_length=8)
         entry = User(name = name, email = email,password = sec_pass)
         db.session.add(entry)
         db.session.commit()
