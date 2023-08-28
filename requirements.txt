@@ -8,5 +8,5 @@ Flask_WTF==1.1.1
 Werkzeug==2.2.3
 WTForms==3.0.1
 flask_sqlalchemy==2.5.1
-# gunicorn==21.2.0
+gunicorn==21.2.0
 psycopg2-binary==2.9.6
