@@ -40,14 +40,14 @@ db.init_app(app)
 class BlogPost(db.Model):
     __tablename__ = "blog_posts"
     id = db.Column(db.Integer, primary_key=True)
-    author_id = db.Column(db.String(250), db.ForeignKey("users.id"))
-    author = relationship('User', back_populates='post')
+    author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    author = relationship('User', back_populates='blog_posts')
     title = db.Column(db.String(250), unique=True, nullable=False)
     subtitle = db.Column(db.String(250), nullable=False)
     date = db.Column(db.String(250), nullable=False)
     body = db.Column(db.Text, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
-    comm = relationship('comment', back_populates='blog')
+    comm = relationship('Comment', back_populates='blog_post')
 
 
 
