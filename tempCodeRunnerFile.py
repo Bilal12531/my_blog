@@ -1,1 +1,1 @@
- sec_pass = generate_password_hash(password, method="pbkdf2", salt_length=8)
+MY_PASS

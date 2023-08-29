@@ -1,5 +1,5 @@
 from datetime import date
-from flask import Flask, abort, render_template, redirect, url_for, flash
+from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_gravatar import Gravatar
@@ -11,6 +11,9 @@ from sqlalchemy.orm import relationship
 # Import your forms from the forms.py
 from forms import CreatePostForm, reg_form,login_form,comments
 import os
+import smtplib
+my_email = os.environ.get('MY_EMAIL')
+my_pass = os.environ.get('MY_PASS')
 
 
 app = Flask(__name__)
@@ -213,11 +216,34 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/contact")
+@app.route("/contact", methods = ['POST','GET'])
 @login_required
 def contact():
-    return render_template("contact.html")
+    if request.method == 'POST':
+        data = request.form
+        name = data['name']
+        email = data['email']
+        phone = data['phone']
+        message = data['message']
+        msg = "Successfully sent your message"
+        send_msg(name, email, phone, message)
+        return render_template("contact.html", msg_sent = msg)
+
+
+
+    return render_template("contact.html", msg_sent = False)
+
+def send_msg(name, email, phone, mseg):
+    
+    connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)  
+    connection.login(user=my_email, password=my_pass)   
+    connection.sendmail(from_addr=my_email,
+                        to_addrs=f"{email}", 
+                        msg=f"Subject:Becon Jobs-job_finder\n\n Your Email:{email}\nYour Name:{name}\nYour Phone num:{phone}\nYour Message{mseg}")
+
+    connection.quit()  
+
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
