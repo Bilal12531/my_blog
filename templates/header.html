@@ -44,7 +44,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">Amazing Blogs</a>
+        <a class="navbar-brand" href="/home">Amazing Blogs</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -59,7 +59,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto py-4 py-lg-0">
-            {%if login == False:%}
+            
             <li class="nav-item">
               <a
                 class="nav-link px-lg-3 py-3 py-lg-4"
@@ -67,7 +67,7 @@
                 >Home</a
               >
             </li>
-            {%endif%}
+           
             <!-- TODO: Only show Login/Register if user is logged out. Otherwise show "Log Out" -->
             {% if login or regis:%}
             <li class="nav-item">
@@ -87,7 +87,7 @@
               >
             </li>
             {%endif%}
-            {%if login == False:%}
+            
             <li class="nav-item">
               <a
                 class="nav-link px-lg-3 py-3 py-lg-4"
@@ -109,7 +109,7 @@
                 >Contact</a
               >
             </li>
-            {%endif%}
+           
           </ul>
         </div>
       </div>
