@@ -101,7 +101,7 @@ def register():
         db.session.add(entry)
         db.session.commit()
         return redirect(url_for('login'))
-    return render_template("register.html", form=reg, regis = True, c =current_user)
+    return render_template("register.html", form=reg, regis = True)
 
 
 # TODO: Retrieve a user from the database based on their email. 
@@ -123,7 +123,7 @@ def login():
             login_user(user)
             return redirect(url_for('get_all_posts'))
 
-    return render_template("login.html", form = log, login = True, c =current_user)
+    return render_template("login.html", form = log, login = True)
 
 
 @app.route('/logout')
@@ -137,7 +137,7 @@ def logout():
 def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
-    return render_template("index.html", all_posts=posts, login  = False,  c =current_user)
+    return render_template("index.html", all_posts=posts, login  = False)
 
 
 # TODO: Allow logged-in users to comment on posts
@@ -213,7 +213,7 @@ def delete_post(post_id):
 @app.route("/about")
 @login_required
 def about():
-    return render_template("about.html", c =current_user)
+    return render_template("about.html")
 
 
 @app.route("/contact", methods = ['POST','GET'])
@@ -231,7 +231,7 @@ def contact():
 
 
 
-    return render_template("contact.html", msg_sent = False, c =current_user)
+    return render_template("contact.html", msg_sent = False)
 
 def send_msg(name, email, phone, mseg):
     
@@ -247,7 +247,7 @@ def send_msg(name, email, phone, mseg):
 def user_table():
     res = db.session.execute(db.select(User))
     users_data = res.scalars()
-    return render_template('users_table.html', data = users_data, c =current_user)
+    return render_template('users_table.html', data = users_data)
     
 
 if __name__ == "__main__":
