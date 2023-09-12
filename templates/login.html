@@ -28,10 +28,16 @@ include "header.html" %}
       {%endif%}
       {%endfor%}
       {%endwith%}
+      
       <div class="col-lg-8 col-md-10 mx-auto">
+        
         {{ render_form(form) }}
+       
       </div>
     </div>
+  </div>
+  <div style="padding-left: 70pc;">
+    <a href="{{url_for('forgot_pass')}}"><button type="button" class="btn btn-warning">Forgot Password</button></a>
   </div>
 </main>
 

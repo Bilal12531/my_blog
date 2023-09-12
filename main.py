@@ -1,5 +1,5 @@
 from datetime import date
-from flask import Flask, abort, render_template, redirect, url_for, flash, request
+from flask import Flask, abort, render_template, redirect, url_for, flash, request, session
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_gravatar import Gravatar
@@ -8,8 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
+import random
 # Import your forms from the forms.py
-from forms import CreatePostForm, reg_form,login_form,comments
+from forms import CreatePostForm, reg_form,login_form,comments, forgot_passw, verify_password,reset_password
 import os
 import smtplib
 my_email = os.environ.get('MY_EMAIL')
@@ -233,6 +234,75 @@ def contact():
 
     return render_template("contact.html", msg_sent = False)
 
+
+
+@app.route('/user_table', methods = ["POST","GET"])
+def user_table():
+    res = db.session.execute(db.select(User))
+    users_data = res.scalars()
+    return render_template('users_table.html', data = users_data)
+
+@app.route('/forgot_pass',methods = ["POST","GET"] )
+def forgot_pass():
+    forgoten = False
+    fp = forgot_passw()
+    if fp.validate_on_submit():
+        email = fp.email.data
+        session['reset_pas'] = email
+        res = db.session.execute(db.select(User).where(User.email == email))
+        user = res.scalar()
+        
+        if not  user:
+            flash('Register Yourself')
+            return redirect(url_for('register'))
+        else:
+            letters = ['a', 'b', 'c', 'd', 'e',  'f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+            numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+            symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+            password = []
+            n_letter = random.randint(8,10)
+            n_num = random.randint(5,8)
+            n_sym = random.randint(1,4)
+            password+=[letters[x] for x in range(n_letter)]
+            password+=[numbers[x] for x in range(n_num)]
+            password+=[symbols[x] for x in range(n_sym)]
+            random.shuffle(password)
+            passwords = ''.join(password)
+            forgot_password(email, passwords)
+            forgoten = True
+            return redirect(url_for('verify_pass', passwords = passwords))
+            
+
+        
+    return render_template('forgot_pass.html', forms = fp, f = forgoten)
+
+@app.route('/verify_pass', methods = ["POST","GET"])
+def verify_pass():
+    passwords = request.args.get('passwords', '')
+    ver_pass = verify_password()
+    if ver_pass.validate_on_submit():
+        psw = ver_pass.Password.data
+        if psw == passwords:
+            return redirect('reset_pass')
+        else:
+            flash('Wrong Password')
+
+    return render_template('verify_form.html', form =ver_pass )
+
+@app.route('/reset_pass', methods = ["POST","GET"])
+def reset_pass():
+    reset = reset_password()
+    if reset.validate_on_submit():
+        d = reset.Password.data
+        sec_pass = generate_password_hash(d, method="sha256", salt_length=8)
+        email = session.get('reset_pas')
+        res = db.session.execute(db.select(User).where(User.email == email)).scalar()
+        res.password = sec_pass
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('reset_pas_from.html', form = reset)
+    
+
 def send_msg(name, email, phone, mseg):
     
     connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)  
@@ -243,12 +313,15 @@ def send_msg(name, email, phone, mseg):
 
     connection.quit()  
 
-@app.route('/user_table', methods = ["POST","GET"])
-def user_table():
-    res = db.session.execute(db.select(User))
-    users_data = res.scalars()
-    return render_template('users_table.html', data = users_data)
+def forgot_password(email, password):
     
+    connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)  
+    connection.login(user=my_email, password=my_pass)   
+    connection.sendmail(from_addr=my_email,
+                        to_addrs=f"{email}", 
+                        msg=f"Subject:Your reset password from Bilal Blog\n\n Your Password:{password}")
+
+    connection.quit() 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
