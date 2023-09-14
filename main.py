@@ -308,7 +308,7 @@ def reset_pass():
 def starting():
     session['i'] = 0
     session['c'] = 0
-    with open('final_blog2/my_blog/static/Quiz.json', 'r') as quiz:
+    with open('static/Quiz.json', 'r') as quiz:
         q = json.load(quiz) 
     categories = list(q.keys())
 
@@ -321,7 +321,7 @@ def questions(j):
         session['i'] = 0
     i = session['i']
     session['j'] = j    
-    with open('final_blog2/my_blog/static/Quiz.json', 'r') as quiz:
+    with open('static/Quiz.json', 'r') as quiz:
         q = json.load(quiz)
     session['all_ques'] =  q[j][i]['question']
     session['correct_ans'] =  q[j][i]['correct_option']
