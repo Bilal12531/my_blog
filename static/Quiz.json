@@ -1,0 +1,470 @@
+{
+    "Physics": [
+      {
+        "question": "What is the SI unit of force?",
+        "options": ["Newton", "Watt", "Joule", "Volt"],
+        "correct_option": "Newton"
+      },
+      {
+        "question": "What is the speed of light in a vacuum?",
+        "options": ["299,792,458 meters per second", "186,282 miles per second", "3.00 x 10^8 kilometers per hour", "299,792,458 kilometers per hour"],
+        "correct_option": "299,792,458 meters per second"
+      },
+      {
+        "question": "Which law of thermodynamics states that energy cannot be created or destroyed, only converted from one form to another?",
+        "options": ["First Law", "Second Law", "Third Law", "Zeroth Law"],
+        "correct_option": "First Law"
+      },
+      {
+        "question": "What is the formula for calculating kinetic energy?",
+        "options": ["E = mc^2", "E = hf", "E = 1/2mv^2", "E = Fd"],
+        "correct_option": "E = 1/2mv^2"
+      },
+      {
+        "question": "What does the acronym 'LASER' stand for?",
+        "options": ["Light Amplification by Stimulated Emission of Radiation", "Longitudinal And Shear Electromagnetic Radiation", "Luminous Apparatus for Spectral Emission and Reflection", "Laser is not an acronym"],
+        "correct_option": "Light Amplification by Stimulated Emission of Radiation"
+      },
+      {
+        "question": "In which year was the theory of general relativity proposed by Albert Einstein?",
+        "options": ["1905", "1915", "1925", "1935"],
+        "correct_option": "1915"
+      },
+      {
+        "question": "What is the unit of electric charge?",
+        "options": ["Ampere", "Coulomb", "Ohm", "Watt"],
+        "correct_option": "Coulomb"
+      },
+      {
+        "question": "Which subatomic particle is found in the nucleus of an atom?",
+        "options": ["Proton", "Electron", "Neutron", "Photon"],
+        "correct_option": "Proton"
+      },
+      {
+        "question": "What is the SI unit of resistance in an electrical circuit?",
+        "options": ["Ampere", "Ohm", "Watt", "Volt"],
+        "correct_option": "Ohm"
+      },
+      {
+        "question": "What is the force that opposes the relative motion or tendency of such motion of two surfaces in contact?",
+        "options": ["Gravitational Force", "Magnetic Force", "Frictional Force", "Tension Force"],
+        "correct_option": "Frictional Force"
+      }
+    ],
+    "Entertainment": [
+      {
+        "question": "Who won the Academy Award for Best Actor in 2020 for his role in 'Joker'?",
+        "options": ["Robert Downey Jr.", "Joaquin Phoenix", "Leonardo DiCaprio", "Brad Pitt"],
+        "correct_option": "Joaquin Phoenix"
+      },
+      {
+        "question": "Which film directed by Quentin Tarantino features characters named Jules Winnfield and Vincent Vega?",
+        "options": ["Pulp Fiction", "Inglourious Basterds", "Reservoir Dogs", "Kill Bill"],
+        "correct_option": "Pulp Fiction"
+      },
+      {
+        "question": "Who played the character of Captain Jack Sparrow in the 'Pirates of the Caribbean' film series?",
+        "options": ["Johnny Depp", "Orlando Bloom", "Geoffrey Rush", "Ian McShane"],
+        "correct_option": "Johnny Depp"
+      },
+      {
+        "question": "Which British actor is known for his portrayal of Sherlock Holmes in the TV series 'Sherlock'?",
+        "options": ["David Tennant", "Matt Smith", "Martin Freeman", "Benedict Cumberbatch"],
+        "correct_option": "Benedict Cumberbatch"
+      },
+      {
+        "question": "In the movie 'The Lord of the Rings: The Fellowship of the Ring,' who played the role of Frodo Baggins?",
+        "options": ["Elijah Wood", "Daniel Radcliffe", "Rupert Grint", "Tom Felton"],
+        "correct_option": "Elijah Wood"
+      },
+      {
+        "question": "Which animated film features a character named Simba and the famous song 'Circle of Life'?",
+        "options": ["Beauty and the Beast", "Aladdin", "The Lion King", "Frozen"],
+        "correct_option": "The Lion King"
+      },
+      {
+        "question": "Which actress starred as Katniss Everdeen in 'The Hunger Games' film series?",
+        "options": ["Emma Watson", "Jennifer Aniston", "Mila Kunis", "Jennifer Lawrence"],
+        "correct_option": "Jennifer Lawrence"
+      },
+      {
+        "question": "Who is the creator of the 'Harry Potter' book series?",
+        "options": ["J.K. Rowling", "Stephen King", "George R.R. Martin", "Suzanne Collins"],
+        "correct_option": "J.K. Rowling"
+      },
+      {
+        "question": "Which superhero team is known for fighting supervillains in Gotham City?",
+        "options": ["The Avengers", "The X-Men", "The Justice League", "The Fantastic Four"],
+        "correct_option": "The Justice League"
+      },
+      {
+        "question": "In the TV series 'Friends,' what is the name of Ross and Monica's dog when they were kids?",
+        "options": ["Rex", "Buddy", "Fido", "Chi-Chi"],
+        "correct_option": "Chi-Chi"
+      }
+    ],
+    "Math": [
+      {
+        "question": "What is the sum of 2 + 2?",
+        "options": ["3", "4", "5", "6"],
+        "correct_option": "4"
+      },
+      {
+        "question": "What is the result of 5 multiplied by 7?",
+        "options": ["25", "30", "35", "40"],
+        "correct_option": "35"
+      },
+      {
+        "question": "What is the square root of 16?",
+        "options": ["2", "3", "4", "5"],
+        "correct_option": "4"
+      },
+      {
+        "question": "What is 10 divided by 2?",
+        "options": ["2", "3", "4", "5"],
+        "correct_option": "5"
+      },
+      {
+        "question": "What is 3 squared?",
+        "options": ["6", "9", "12", "15"],
+        "correct_option": "9"
+      },
+      {
+        "question": "What is 20 minus 8?",
+        "options": ["8", "10", "12", "15"],
+        "correct_option": "12"
+      },
+      {
+        "question": "What is 25 percent of 80?",
+        "options": ["10", "20", "30", "40"],
+        "correct_option": "20"
+      },
+      {
+        "question": "What is the result of 7 raised to the power of 3?",
+        "options": ["21", "49", "64", "343"],
+        "correct_option": "343"
+      },
+      {
+        "question": "What is the product of 6 and 9?",
+        "options": ["42", "48", "54", "60"],
+        "correct_option": "54"
+      },
+      {
+        "question": "What is 15 divided by 3?",
+        "options": ["3", "5", "7", "9"],
+        "correct_option": "5"
+      }
+    ],
+    "History": [
+      {
+        "question": "Who was the first President of the United States?",
+        "options": ["Thomas Jefferson", "John Adams", "George Washington", "James Madison"],
+        "correct_option": "George Washington"
+      },
+      {
+        "question": "Which ancient civilization built the Great Pyramid of Giza?",
+        "options": ["Roman Empire", "Maya Civilization", "Egyptian Empire", "Inca Empire"],
+        "correct_option": "Egyptian Empire"
+      },
+      {
+        "question": "Who is known for his voyages to the Americas in 1492?",
+        "options": ["Vasco da Gama", "Christopher Columbus", "Amerigo Vespucci", "Ferdinand Magellan"],
+        "correct_option": "Christopher Columbus"
+      },
+      {
+        "question": "In which year did World War I begin?",
+        "options": ["1914", "1916", "1918", "1920"],
+        "correct_option": "1914"
+      },
+      {
+        "question": "Who wrote the 'Declaration of Independence' of the United States?",
+        "options": ["Benjamin Franklin", "Thomas Jefferson", "John Adams", "George Washington"],
+        "correct_option": "Thomas Jefferson"
+      },
+      {
+        "question": "Which country was divided into East and West Germany after World War II?",
+        "options": ["France", "United Kingdom", "Italy", "Germany"],
+        "correct_option": "Germany"
+      },
+      {
+        "question": "Who was the first female Prime Minister of India?",
+        "options": ["Indira Gandhi", "Sonia Gandhi", "Mayawati", "Mamata Banerjee"],
+        "correct_option": "Indira Gandhi"
+      },
+      {
+        "question": "The Magna Carta, signed in 1215, limited the power of which English monarch?",
+        "options": ["Henry VIII", "Elizabeth I", "Richard III", "John"],
+        "correct_option": "John"
+      },
+      {
+        "question": "Which American civil rights leader is known for his 'I Have a Dream' speech?",
+        "options": ["Malcolm X", "Martin Luther King Jr.", "Harriet Tubman", "Rosa Parks"],
+        "correct_option": "Martin Luther King Jr."
+      },
+      {
+        "question": "Who was the last Tsar of Russia before the Russian Revolution?",
+        "options": ["Nicholas II", "Ivan the Terrible", "Peter the Great", "Vladimir Lenin"],
+        "correct_option": "Nicholas II"
+      }
+    ],
+    "Geography": [
+      {
+        "question": "Which continent is the Sahara Desert located in?",
+        "options": ["Africa", "Asia", "South America", "Australia"],
+        "correct_option": "Africa"
+      },
+      {
+        "question": "What is the capital city of France?",
+        "options": ["Madrid", "Rome", "Berlin", "Paris"],
+        "correct_option": "Paris"
+      },
+      {
+        "question": "Which river is the longest in the world?",
+        "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+        "correct_option": "Nile River"
+      },
+      {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": ["China", "South Korea", "Japan", "Thailand"],
+        "correct_option": "Japan"
+      },
+      {
+        "question": "Which mountain range stretches across the western part of South America?",
+        "options": ["Rocky Mountains", "Andes Mountains", "Himalayas", "Alps"],
+        "correct_option": "Andes Mountains"
+      },
+      {
+        "question": "Which ocean is the largest in the world?",
+        "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        "correct_option": "Pacific Ocean"
+      },
+      {
+        "question": "What is the tallest mountain in North America?",
+        "options": ["Mount St. Helens", "Mount Rainier", "Mount McKinley", "Mount Everest"],
+        "correct_option": "Mount McKinley"
+      },
+      {
+        "question": "Which country is known as the Land of a Thousand Lakes?",
+        "options": ["Sweden", "Norway", "Finland", "Denmark"],
+        "correct_option": "Finland"
+      },
+      {
+        "question": "Which desert is known as the Atacama Desert and is one of the driest places on Earth?",
+        "options": ["Gobi Desert", "Sahara Desert", "Kalahari Desert", "Atacama Desert"],
+        "correct_option": "Atacama Desert"
+      },
+      {
+        "question": "In which country would you find the Great Barrier Reef?",
+        "options": ["Brazil", "Australia", "Mexico", "Egypt"],
+        "correct_option": "Australia"
+      }
+    ],
+    "ComputerNetwork": [
+      {
+        "question": "What does the acronym 'LAN' stand for in computer networking?",
+        "options": ["Local Area Network", "Long Access Network", "Large Area Network", "Link Access Network"],
+        "correct_option": "Local Area Network"
+      },
+      {
+        "question": "Which device is used to connect multiple computers in a network and filter traffic based on MAC addresses?",
+        "options": ["Router", "Hub", "Switch", "Modem"],
+        "correct_option": "Switch"
+      },
+      {
+        "question": "What protocol is used for sending and receiving emails over the internet?",
+        "options": ["HTTP", "SMTP", "FTP", "TCP"],
+        "correct_option": "SMTP"
+      },
+      {
+        "question": "Which organization is responsible for assigning and managing IP addresses globally?",
+        "options": ["IEEE", "ICANN", "ISP", "IETF"],
+        "correct_option": "ICANN"
+      },
+      {
+        "question": "Which layer of the OSI model is responsible for error detection and correction?",
+        "options": ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
+        "correct_option": "Data Link Layer"
+      },
+      {
+        "question": "What is the maximum data rate of a standard Ethernet connection in megabits per second (Mbps)?",
+        "options": ["10 Mbps", "100 Mbps", "1 Gbps", "10 Gbps"],
+        "correct_option": "1 Gbps"
+      },
+      {
+        "question": "Which type of network topology connects each device to a central hub or switch?",
+        "options": ["Bus Topology", "Ring Topology", "Star Topology", "Mesh Topology"],
+        "correct_option": "Star Topology"
+      },
+      {
+        "question": "What is the purpose of a firewall in network security?",
+        "options": ["Filtering web content", "Protecting against malware", "Monitoring network traffic", "Controlling access and traffic"],
+        "correct_option": "Controlling access and traffic"
+      },
+      {
+        "question": "Which IP address range is reserved for private networks and cannot be routed on the internet?",
+        "options": ["10.0.0.0 - 10.255.255.255", "172.16.0.0 - 172.31.255.255", "192.168.0.0 - 192.168.255.255", "169.254.0.0 - 169.254.255.255"],
+        "correct_option": "192.168.0.0 - 192.168.255.255"
+      },
+      {
+        "question": "What protocol is used for secure communication over a computer network, often used for secure web browsing?",
+        "options": ["SMTP", "FTP", "SSH", "HTTPS"],
+        "correct_option": "HTTPS"
+      }
+    ],
+    "InformationSystem": [
+      {
+        "question": "What is the primary function of an Information System in an organization?",
+        "options": ["Data storage", "Communication", "Decision support", "Employee training"],
+        "correct_option": "Decision support"
+      },
+      {
+        "question": "Which component of an Information System is responsible for converting raw data into meaningful information?",
+        "options": ["Hardware", "Software", "Data", "People"],
+        "correct_option": "Software"
+      },
+      {
+        "question": "What does the acronym 'ERP' stand for in the context of Information Systems?",
+        "options": ["Enterprise Resource Planning", "Electronic Records Processing", "Effective Resource Provisioning", "Enhanced Reporting Process"],
+        "correct_option": "Enterprise Resource Planning"
+      },
+      {
+        "question": "Which Information System supports day-to-day operational activities and transactions within an organization?",
+        "options": ["Executive Information System (EIS)", "Transaction Processing System (TPS)", "Decision Support System (DSS)", "Customer Relationship Management (CRM)"],
+        "correct_option": "Transaction Processing System (TPS)"
+      },
+      {
+        "question": "What is the purpose of a Customer Relationship Management (CRM) system?",
+        "options": ["Managing financial transactions", "Managing customer interactions", "Managing employee payroll", "Managing inventory"],
+        "correct_option": "Managing customer interactions"
+      },
+      {
+        "question": "Which Information System provides strategic information to top-level executives to support decision-making?",
+        "options": ["Management Information System (MIS)", "Executive Information System (EIS)", "Decision Support System (DSS)", "Enterprise Resource Planning (ERP)"],
+        "correct_option": "Executive Information System (EIS)"
+      },
+      {
+        "question": "In Information Systems, what is the purpose of a Database Management System (DBMS)?",
+        "options": ["Creating marketing materials", "Managing hardware components", "Storing and retrieving data", "Analyzing financial data"],
+        "correct_option": "Storing and retrieving data"
+      },
+      {
+        "question": "What is the term for a set of rules and procedures for exchanging information between different Information Systems?",
+        "options": ["Data governance", "Data modeling", "Data mining", "Data integration"],
+        "correct_option": "Data integration"
+      },
+      {
+        "question": "Which Information System component represents the physical equipment used to process, store, and transmit data?",
+        "options": ["Hardware", "Software", "Data", "Networks"],
+        "correct_option": "Hardware"
+      },
+      {
+        "question": "What role do end-users play in the development and use of Information Systems?",
+        "options": ["Designing software", "Managing databases", "Providing technical support", "Interacting with the system"],
+        "correct_option": "Interacting with the system"
+      }
+    ],
+    "Psychology": [
+      {
+        "question": "What is the scientific study of behavior and mental processes called?",
+        "options": ["Philosophy", "Psychiatry", "Sociology", "Psychology"],
+        "correct_option": "Psychology"
+      },
+      {
+        "question": "Who is often referred to as the father of modern psychology?",
+        "options": ["Sigmund Freud", "John Watson", "William James", "B.F. Skinner"],
+        "correct_option": "William James"
+      },
+      {
+        "question": "Which branch of psychology focuses on understanding and treating mental disorders?",
+        "options": ["Cognitive psychology", "Developmental psychology", "Clinical psychology", "Social psychology"],
+        "correct_option": "Clinical psychology"
+      },
+      {
+        "question": "What is the term for a sudden and intense feeling of fear or terror often accompanied by physical symptoms?",
+        "options": ["Anxiety", "Depression", "Phobia", "Panic attack"],
+        "correct_option": "Panic attack"
+      },
+      {
+        "question": "Who developed the psychoanalytic theory, which emphasized the role of the unconscious mind in shaping behavior?",
+        "options": ["B.F. Skinner", "Carl Rogers", "Jean Piaget", "Sigmund Freud"],
+        "correct_option": "Sigmund Freud"
+      },
+      {
+        "question": "Which psychological perspective focuses on the influence of social and cultural factors on behavior?",
+        "options": ["Behavioral perspective", "Cognitive perspective", "Humanistic perspective", "Sociocultural perspective"],
+        "correct_option": "Sociocultural perspective"
+      },
+      {
+        "question": "What is the process by which information is encoded, stored, and retrieved in memory called?",
+        "options": ["Sensation", "Perception", "Learning", "Memory"],
+        "correct_option": "Memory"
+      },
+      {
+        "question": "Which famous experiment in psychology explored the concept of obedience to authority figures?",
+        "options": ["Milgram experiment", "Pavlov's dog experiment", "Little Albert experiment", "Skinner box experiment"],
+        "correct_option": "Milgram experiment"
+      },
+      {
+        "question": "What is the term for the defense mechanism in which unacceptable thoughts or impulses are attributed to others?",
+        "options": ["Projection", "Regression", "Displacement", "Denial"],
+        "correct_option": "Projection"
+      },
+      {
+        "question": "Which stage of Erik Erikson's theory of psychosocial development occurs during adolescence and involves the search for identity?",
+        "options": ["Trust vs. Mistrust", "Generativity vs. Stagnation", "Autonomy vs. Shame and Doubt", "Identity vs. Role Confusion"],
+        "correct_option": "Identity vs. Role Confusion"
+      }
+    ],
+    "Sociology": [
+      {
+        "question": "What is the scientific study of society, human behavior, and social relationships called?",
+        "options": ["Psychology", "Anthropology", "Sociology", "Economics"],
+        "correct_option": "Sociology"
+      },
+      {
+        "question": "Which concept in sociology refers to the process by which individuals learn and internalize the values, beliefs, and norms of their culture?",
+        "options": ["Socialization", "Acculturation", "Assimilation", "Discrimination"],
+        "correct_option": "Socialization"
+      },
+      {
+        "question": "What term is used in sociology to describe the unequal distribution of resources and opportunities in society?",
+        "options": ["Equality", "Diversity", "Discrimination", "Inequality"],
+        "correct_option": "Inequality"
+      },
+      {
+        "question": "Which sociological perspective emphasizes the role of power and conflict in shaping society?",
+        "options": ["Structural Functionalism", "Symbolic Interactionism", "Conflict Theory", "Feminism"],
+        "correct_option": "Conflict Theory"
+      },
+      {
+        "question": "What is the term for the beliefs and practices that justify social inequalities and maintain the status quo?",
+        "options": ["Social norms", "Cultural relativism", "Social stratification", "Ideology"],
+        "correct_option": "Ideology"
+      },
+      {
+        "question": "Which concept in sociology refers to the process by which individuals or groups adapt to the culture of a dominant or host society?",
+        "options": ["Socialization", "Acculturation", "Assimilation", "Globalization"],
+        "correct_option": "Assimilation"
+      },
+      {
+        "question": "What is the term for a large and impersonal social structure that influences individual behavior and shapes society?",
+        "options": ["Microsystem", "Ecosystem", "Macrostructure", "Subculture"],
+        "correct_option": "Macrostructure"
+      },
+      {
+        "question": "Which sociological perspective focuses on the symbolic meaning that people attach to social interactions and symbols?",
+        "options": ["Structural Functionalism", "Symbolic Interactionism", "Conflict Theory", "Feminism"],
+        "correct_option": "Symbolic Interactionism"
+      },
+      {
+        "question": "In sociology, what is the term for the systematic study of human society and social behavior?",
+        "options": ["Ethnography", "Demography", "Anthropology", "Sociology"],
+        "correct_option": "Sociology"
+      },
+      {
+        "question": "Which social institution is responsible for the socialization of children and the transmission of culture from one generation to the next?",
+        "options": ["Government", "Religion", "Family", "Education"],
+        "correct_option": "Family"
+      }
+    ]
+  }

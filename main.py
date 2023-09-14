@@ -9,6 +9,7 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 import random
+import json
 # Import your forms from the forms.py
 from forms import CreatePostForm, reg_form,login_form,comments, forgot_passw, verify_password,reset_password
 import os
@@ -301,7 +302,62 @@ def reset_pass():
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('reset_pas_from.html', form = reset)
-    
+
+@app.route('/quizes')
+@login_required
+def starting():
+    session['i'] = 0
+    session['c'] = 0
+    with open('final_blog2/my_blog/static/Quiz.json', 'r') as quiz:
+        q = json.load(quiz) 
+    categories = list(q.keys())
+
+    return render_template('cards.html', cat = categories)
+
+@app.route('/questions/<string:j>')
+@login_required
+def questions(j):
+    if 'i' not in session:
+        session['i'] = 0
+    i = session['i']
+    session['j'] = j    
+    with open('final_blog2/my_blog/static/Quiz.json', 'r') as quiz:
+        q = json.load(quiz)
+    session['all_ques'] =  q[j][i]['question']
+    session['correct_ans'] =  q[j][i]['correct_option']
+    session['length'] = len(q[j])
+    return render_template('q_index.html', q = q[j][i])
+
+@app.route('/submit', methods = ["POST"])
+@login_required
+def submit():
+   try: 
+    if 'c' not in session:
+        session['c'] = 0
+    c = session['c']
+    i = session.get('i', 0)
+    j = session.get('j')
+    data = request.form.to_dict()
+    length = session.get('length')
+
+    ques = session.get('all_ques')
+    correct_ans = session.get('correct_ans')
+    if  correct_ans == data[ques]:
+        c +=1 
+        session['c'] = c
+    else:
+        c
+   except KeyError:
+    if length - 1 > i:
+        i += 1
+        session['i'] = i
+        return redirect(url_for('questions',j=j))
+   finally:
+    if length - 1 > i:
+        i += 1
+        session['i'] = i
+        return redirect(url_for('questions',j=j)) 
+    return render_template('result.html', c=c, length = length)   
 
 def send_msg(name, email, phone, mseg):
     
@@ -322,6 +378,8 @@ def forgot_password(email, password):
                         msg=f"Subject:Your reset password from Bilal Blog\n\n Your Password:{password}")
 
     connection.quit() 
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
