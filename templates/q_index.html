@@ -75,8 +75,41 @@
 
         /* Add hover effect to the text */
         .custom-radio-label:hover .custom-radio-text {
-            background-color: #f8f9fa;
+            background-color: #aed0f1;
         }
+        /* Style the radio buttons */
+.color-radio {
+    display: none; /* Hide the actual radio buttons */
+}
+
+/* Style the labels to look like buttons */
+.radio-label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the labels when the radio button is checked */
+.color-radio:checked + .radio-label {
+    background-color: #ff6600; /* Change this to the desired color */
+    color: white;
+    border-color: #ff6600;
+}
+/* Style the custom radio button circle when clicked */
+.custom-radio-circle.clicked {
+    border: 2px solid #ff6600; /* Change this to the desired color */
+}
+
+/* Style the inner circle when clicked */
+.custom-radio-circle.clicked .custom-radio-circle-inner {
+    background-color: #ff6600; /* Change this to the desired color */
+}
+.color-radio:checked + .custom-radio-label .custom-radio-circle-inner {
+    background-color: #ff6600;}
+
     </style>
 </head>
 <body>
@@ -95,7 +128,7 @@
                                     <div class="custom-radio-circle-inner"></div>
                                 </div>
                                 <span class="custom-radio-text">{{ i }}</span>
-                                <input type="radio" name="{{ q['question'] }}" value="{{i}}" style="display: none;">
+                                <input type="radio" name="{{ q['question'] }}" value="{{i}}" style="display: none;" class="color-radio" value="red">
                             </label>
                         </li>
                     {% endfor %}
@@ -104,21 +137,42 @@
             <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
-    <script>
-        // JavaScript to handle radio button click and background color change
-        var customRadioLabels = document.querySelectorAll('.custom-radio-label');
-
-        customRadioLabels.forEach(function(label) {
-            label.addEventListener('click', function() {
-                // Remove 'active' class from all labels
-                customRadioLabels.forEach(function(item) {
-                    item.classList.remove('active');
-                });
-
-                // Add 'active' class to the selected label
-                label.classList.add('active');
+ <script>
+    // JavaScript to handle radio button click and background color change
+    var customRadioLabels = document.querySelectorAll('.custom-radio-label');
+    
+    customRadioLabels.forEach(function(label) {
+        label.addEventListener('click', function() {
+            // Remove 'active' class from all labels
+            customRadioLabels.forEach(function(item) {
+                item.classList.remove('active');
+                item.querySelector('.custom-radio-circle').classList.remove('clicked');
             });
+    
+            // Add 'active' class to the selected label
+            label.classList.add('active');
+    
+            // Toggle the color of the custom radio button circle when clicked
+            var circle = label.querySelector('.custom-radio-circle');
+            circle.classList.add('clicked');
         });
-    </script>
+    });
+    
+</script>
+    
+<script>
+var customRadioLabels = document.querySelectorAll('.custom-radio-label');
+
+    customRadioLabels.forEach(function(label) {
+        label.addEventListener('click', function() {
+            // Remove 'active' class from all labels
+            customRadioLabels.forEach(function(item) {
+                item.classList.remove('active');
+            });
+    
+            // Add 'active' class to the selected label
+            label.classList.add('active');
+        });
+    });</script>
 </body>
 </html>
